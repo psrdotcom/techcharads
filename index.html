@@ -38,8 +38,8 @@
         <div class="w3-display-middle">
             <h1 class="w3-jumbo w3-animate-top">Techcharads</h1>
             <br>
-            <div id="myRandomDiv" class="w3-xxlarge w3-animate-top w3-center w3-text-yellow randomDiv">Start Game</div><br>
-            <button id="changeWord" name="changeWord" value="Next" class="w3-block w3-round-xxlarge w3-white">Next</button>
+            <div id="myRandomDiv" class="w3-xxlarge w3-animate-top w3-center w3-orange w3-text-black randomDiv w3-padding-small">Start Game</div><br>
+            <button id="changeWord" name="changeWord" value="Start" class="w3-block w3-round-xxlarge w3-blue w3-text-white">Start</button>
         </div>
         
         <div class="w3-display-bottomleft w3-padding-large">
@@ -55,8 +55,10 @@
     ];
  
     var randomDiv = document.getElementById("myRandomDiv");
+    var btnNext = document.getElementById("changeWord");
 
-    document.getElementById("changeWord").addEventListener("click", function() {
+    btnNext.addEventListener("click", function() {
+        btnNext.innerHTML = "Next";
         if(randomStrings.length > 0) {
           randomIndex = Math.round((Math.random()*randomStrings.length-1));
           if(randomIndex > -1){
@@ -66,7 +68,7 @@
           }
         } else {
             randomDiv.innerHTML = "GAME OVER <br/>Hope you enjoyed";
-            document.getElementById("changeWord").style.display = "none";
+            btnNext.style.display = "none";
         }
     });
     </script>
