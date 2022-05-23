@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html>
-<title>Techcharads</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-    body,
-    h1 {
-        font-family: "Raleway", sans-serif
-    }
+    <head>
+        <title>Techcharads</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,
+            h1 {
+                font-family: "Raleway", sans-serif
+            }
 
-    body,
-    html {
-        height: 100%
-    }
-    .w3-block {
-        height:50px;
-    }
-    .randomDiv {
-        font-family: Georgia, serif;
-    }
-    .bgimg {
-        background-image: url('psrwaterrappelling1.jpg');
-        min-height: 100%;
-        background-position: center;
-        background-size: cover;
-    }
-</style>
+            body,
+            html {
+                height: 100%
+            }
+            .w3-block {
+                height:50px;
+            }
+            .randomDiv {
+                font-family: Georgia, serif;
+            }
+            .bgimg {
+                background-image: url('psrwaterrappelling1.jpg');
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            }
+        </style>
+        <meta name="cf-2fa-verify" content="1075ab7fadb0112">
+    </head>
+    <body>
 
-<body>
+        <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+            <div class="w3-display-topleft w3-padding-large w3-xlarge">
+                PSR Games
+            </div>
+            <div class="w3-display-middle">
+                <h1 class="w3-jumbo w3-animate-top">Techcharads</h1>
+                <br>
+                <div id="myRandomDiv" class="w3-xxlarge w3-animate-top w3-center w3-orange w3-text-black randomDiv w3-padding-small">Start Game</div><br>
+                <button id="changeWord" name="changeWord" value="Start" class="w3-block w3-round-xxlarge w3-blue w3-text-white">Start</button>
+            </div>
 
-    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-        <div class="w3-display-topleft w3-padding-large w3-xlarge">
-            PSR Games
+            <div class="w3-display-bottomleft w3-padding-large">
+                Powered by <a href="https://pillisureshraju.in/" target="_blank">PSR And Apps</a>
+            </div>
         </div>
-        <div class="w3-display-middle">
-            <h1 class="w3-jumbo w3-animate-top">Techcharads</h1>
-            <br>
-            <div id="myRandomDiv" class="w3-xxlarge w3-animate-top w3-center w3-orange w3-text-black randomDiv w3-padding-small">Start Game</div><br>
-            <button id="changeWord" name="changeWord" value="Start" class="w3-block w3-round-xxlarge w3-blue w3-text-white">Start</button>
-        </div>
-        
-        <div class="w3-display-bottomleft w3-padding-large">
-            Powered by <a href="https://pillisureshraju.in/" target="_blank">PSR And Apps</a>
-        </div>
-    </div>
 
-<script>
-    var randomStrings = [
-        "Jira","Confluence","PR","Merge","BitBucket","GitHub","Okta","Identity","AWS","Local VM",
-        "Debug","On-boarding","Setup","Smoke Tests","Unit Testing","Snyk","Checkmarx","CICD Pipeline",
-        "Main branch","Bug","Documentation","Tutorial","Client","Demo","Sprint","Release","Visual Studio","Python"
-    ];
- 
-    var randomDiv = document.getElementById("myRandomDiv");
-    var btnNext = document.getElementById("changeWord");
+    <script>
+        var randomStrings = [
+            "Jira","Confluence","PR","Merge","BitBucket","GitHub","Okta","Identity","AWS","Local VM",
+            "Debug","On-boarding","Setup","Smoke Tests","Unit Testing","Snyk","Checkmarx","CICD Pipeline",
+            "Main branch","Bug","Documentation","Tutorial","Client","Demo","Sprint","Release","Visual Studio","Python"
+        ];
 
-    btnNext.addEventListener("click", function() {
-        btnNext.innerHTML = "Next";
-        if(randomStrings.length > 0) {
-          randomIndex = Math.round((Math.random()*randomStrings.length-1));
-          if(randomIndex > -1){
-            newText = randomStrings[randomIndex];
-            randomStrings.splice(randomIndex,1);
-            randomDiv.innerHTML = newText;
-          }
-        } else {
-            randomDiv.innerHTML = "GAME OVER <br/>Hope you enjoyed";
-            btnNext.style.display = "none";
-        }
-    });
-    </script>
-</body>
+        var randomDiv = document.getElementById("myRandomDiv");
+        var btnNext = document.getElementById("changeWord");
+
+        btnNext.addEventListener("click", function() {
+            btnNext.innerHTML = "Next";
+            if(randomStrings.length > 0) {
+              randomIndex = Math.round((Math.random()*randomStrings.length-1));
+              if(randomIndex > -1){
+                newText = randomStrings[randomIndex];
+                randomStrings.splice(randomIndex,1);
+                randomDiv.innerHTML = newText;
+              }
+            } else {
+                randomDiv.innerHTML = "GAME OVER <br/>Hope you enjoyed";
+                btnNext.style.display = "none";
+            }
+        });
+        </script>
+    </body>
 
 </html>
